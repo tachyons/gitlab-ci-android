@@ -6,7 +6,7 @@
 #
 
 FROM ubuntu:18.04
-MAINTAINER Jan Grewe <jan@faked.org>
+MAINTAINER Aboobacker MK <aboobackervyd@gmail.com>
 
 ENV VERSION_SDK_TOOLS "4333796"
 
@@ -28,8 +28,11 @@ RUN apt-get -qq update && \
       lib32z1 \
       unzip \
       locales \
+      ruby-dev \
+      build-essential \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN locale-gen en_US.UTF-8
+RUN gem install fastlane
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
