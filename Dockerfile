@@ -29,6 +29,7 @@ RUN apt-get -qq update && \
       unzip \
       locales \
       ruby-dev \
+      libcurl4-openssl-dev \
       build-essential \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN locale-gen en_US.UTF-8
